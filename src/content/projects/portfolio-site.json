@@ -1,0 +1,10 @@
+{
+  "slug": "portfolio-site",
+  "title": "Portfolio Site",
+  "description": "This very site — a fast, static portfolio built with Next.js.",
+  "summary": "A fully static portfolio built with the Next.js App Router, React Server Components and Tailwind CSS. Project pages are pre-rendered at build time from typed JSON content, so every route ships as pure HTML with zero runtime data fetching.",
+  "tags": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+  "year": 2026,
+  "repoUrl": "https://github.com/your-username/portfolio",
+  "featured": true
+}

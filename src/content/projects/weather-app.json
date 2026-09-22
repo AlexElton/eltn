@@ -1,0 +1,10 @@
+{
+  "slug": "weather-app",
+  "title": "Weather App",
+  "description": "A small weather dashboard with search and 7-day forecasts.",
+  "summary": "A weather dashboard that lets users search for cities and view current conditions plus a 7-day forecast. Built as a PWA with offline caching and geolocation support.",
+  "tags": ["React", "TypeScript", "PWA", "OpenWeather API"],
+  "year": 2025,
+  "demoUrl": "https://example.com/weather",
+  "repoUrl": "https://github.com/your-username/weather-app"
+}
