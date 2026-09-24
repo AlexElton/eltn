@@ -1,12 +1,12 @@
 import type { Project } from "@/lib/types";
-import portfolioSite from "@/content/projects/portfolio-site.json";
-import weatherApp from "@/content/projects/weather-app.json";
+import clippy from "@/content/projects/clippy.json";
+import kryptokalkulator from "@/content/projects/kryptokalkulator.json";
 
 /**
  * All projects, newest first. Add a new project by dropping a JSON file in
  * src/content/projects/ and importing it here.
  */
-const projects: Project[] = [portfolioSite, weatherApp].sort((a, b) => b.year - a.year);
+const projects: Project[] = [kryptokalkulator, clippy];
 
 export function getAllProjects(): Project[] {
   return projects;

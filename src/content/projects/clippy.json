@@ -1,0 +1,11 @@
+{
+  "slug": "clippy",
+  "title": "Clippy",
+  "description": "Self-hosted RAG chatbot answering questions from internal documentation.",
+  "summary": "A lightweight RAG (Retrieval Augmented Generation) chatbot that answers technical questions from internal documentation and ops knowledge. Markdown docs are embedded with HuggingFace models and stored in a local Chroma vector database; queries combine vector and keyword search before top hits are sent as context to a locally hosted Llama 3.1 model via Ollama. Runs entirely on internal infrastructure — no external API calls — so sensitive information never leaves the network. Deployed on an OpenStack VM with GPU access and served through a FastAPI/Uvicorn backend.",
+  "tags": ["Python", "FastAPI", "Ollama", "Chroma", "RAG", "OpenStack"],
+  "image": "/images/projects/clippy.png",
+  "year": 2026,
+  "demoUrl": "https://drift.tihlde.org",
+  "featured": true
+}

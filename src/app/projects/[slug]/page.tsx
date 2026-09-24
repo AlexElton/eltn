@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 import { getAllProjects, getProject } from "@/lib/projects";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ImageCarousel } from "@/components/ui/image-carousel";
+import { KeywordCarousel } from "@/components/ui/keyword-carousel";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -41,13 +43,15 @@ export default async function ProjectPage({ params }: Props) {
         <p className="text-zinc-600 dark:text-zinc-400">{project.description}</p>
         <div className="mt-2 flex flex-wrap items-center gap-2">
           <Badge>{project.year}</Badge>
-          {project.tags.map((tag) => (
-            <Badge key={tag}>{tag}</Badge>
-          ))}
+        </div>
+        <div className="mt-2">
+          <KeywordCarousel items={project.tags} />
         </div>
       </div>
 
-      {project.image ? (
+      {project.images && project.images.length > 1 ? (
+        <ImageCarousel images={project.images} alt={project.title} />
+      ) : project.image ? (
         <div className="relative mt-8 aspect-video w-full overflow-hidden rounded-lg border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900">
           <Image
             src={project.image}

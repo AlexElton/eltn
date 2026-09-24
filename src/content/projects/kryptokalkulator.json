@@ -1,0 +1,25 @@
+{
+  "slug": "kryptokalkulator",
+  "title": "Kryptokalkulator",
+  "description": "Skatteetaten tool for importing crypto transactions and calculating taxable gains and losses.",
+  "summary": "A tax calculator for Skatteetaten (The Norwegian Tax Administration) that lets taxpayers import their crypto transactions and automatically computes gains, losses and income for the tax return. Transactions are imported mostly through exchange APIs, with support for wallet addresses on blockchains, CSV uploads and manual entry. Imported transactions are analyzed and matched against holdings to calculate taxable gains and losses per year — using FIFO cost basis — as well as mining income and other income from virtual assets. The result is presented in a four-step wizard (import, transaction history, holdings, summary) that gives the user a draft tax calculation they can review before submitting.",
+  "tags": [
+    "Kotlin",
+    "Spring Boot",
+    "PostgreSQL",
+    "React",
+    "Jenkins",
+    "OpenShift",
+    "ID-porten",
+    "Linux"
+  ],
+  "image": "/images/projects/kryptokalkulator-import.png",
+  "images": [
+    "/images/projects/kryptokalkulator-import.png",
+    "/images/projects/kryptokalkulator-transactions.png",
+    "/images/projects/kryptokalkulator-holdings.png",
+    "/images/projects/kryptokalkulator-summary.png"
+  ],
+  "year": 2026,
+  "featured": true
+}

@@ -13,5 +13,7 @@ export type Project = {
   repoUrl?: string;
   /** Path under /public, e.g. /images/projects/my-app.png */
   image?: string;
+  /** Additional screenshots shown in a carousel on the detail page */
+  images?: string[];
   featured?: boolean;
 };
