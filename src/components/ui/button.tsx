@@ -8,10 +8,8 @@ type ButtonProps = {
 };
 
 const styles = {
-  primary:
-    "bg-zinc-900 text-zinc-50 hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-300",
-  secondary:
-    "border border-zinc-300 text-zinc-900 hover:border-zinc-900 dark:border-zinc-700 dark:text-zinc-50 dark:hover:border-zinc-300",
+  primary: "bg-primary text-secondary hover:bg-primary/85",
+  secondary: "border border-primary/40 text-primary hover:border-primary hover:bg-primary/10",
 } as const;
 
 export function Button({ href, children, variant = "primary", className = "" }: ButtonProps) {

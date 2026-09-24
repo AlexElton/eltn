@@ -9,10 +9,10 @@ export default function Home() {
   return (
     <main className="mx-auto w-full max-w-4xl flex-1 px-6">
       <section className="flex flex-col items-start gap-6 py-24">
-        <h1 className="max-w-2xl text-4xl font-semibold leading-tight tracking-tight text-zinc-900 dark:text-zinc-50">
+        <h1 className="max-w-2xl text-4xl font-semibold leading-tight tracking-tight text-foreground">
           Hi, I&apos;m eltn. I build things for the web.
         </h1>
-        <p className="max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+        <p className="max-w-xl text-lg leading-8 text-foreground/70">
           A short intro goes here — what you do, what you care about, and what makes you interesting
           to work with.
         </p>
