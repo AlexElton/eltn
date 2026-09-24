@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { Timeline } from "@/components/ui/timeline";
 import { ProjectGrid } from "@/components/projects/project-grid";
 import { getFeaturedProjects } from "@/lib/projects";
 
@@ -30,6 +31,11 @@ export default function Home() {
           <ProjectGrid projects={featured} />
         </section>
       ) : null}
+
+      <section className="pb-24">
+        <SectionHeading title="Timeline" subtitle="Where I have been and where I am going." />
+        <Timeline />
+      </section>
     </main>
   );
 }

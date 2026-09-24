@@ -14,14 +14,16 @@ export default function ContactPage() {
         <p>
           Reach me at{" "}
           <a
-            href="mailto:you@example.com"
+            href="mailto:alexander.owren.elton@hotmail.com"
             className="font-medium text-zinc-900 underline dark:text-zinc-50"
           >
-            you@example.com
+            alexander.owren.elton@hotmail.com
           </a>{" "}
           or find me on{" "}
           <a
-            href="https://github.com/your-username"
+            href="https://github.com/AlexElton"
+            target="_blank"
+            rel="noreferrer"
             className="font-medium text-zinc-900 underline dark:text-zinc-50"
           >
             GitHub

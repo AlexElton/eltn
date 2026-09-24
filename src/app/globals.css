@@ -39,6 +39,91 @@ body {
   }
 }
 
+/* Timeline: scroll-driven gold fill line */
+.timeline-fill {
+  animation: timeline-fill linear both;
+  animation-timeline: scroll(root);
+}
+
+@keyframes timeline-fill {
+  from {
+    transform: translateX(-50%) scaleY(0);
+  }
+  to {
+    transform: translateX(-50%) scaleY(1);
+  }
+}
+
+/* Timeline: staggered scroll-reveal per event */
+.timeline-event {
+  animation: timeline-reveal 0.7s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 60%;
+}
+
+@keyframes timeline-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Timeline: pulsing dot for upcoming events */
+.timeline-dot-pulse::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  border: 2px solid rgba(187, 147, 92, 0.6);
+  animation: timeline-pulse 2s ease-out infinite;
+}
+
+@keyframes timeline-pulse {
+  from {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+/* Timeline: fading "to be explored" end */
+.timeline-fade {
+  animation: timeline-fade 2.5s ease-in-out infinite;
+}
+
+@keyframes timeline-fade {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-fill,
+  .timeline-event,
+  .timeline-dot-pulse::after,
+  .timeline-fade {
+    animation: none;
+  }
+  .timeline-fill {
+    transform: translateX(-50%) scaleY(1);
+  }
+  .timeline-event {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* Subtle background design: connected gold diamond grid + warm glows + film grain */
 body::before {
   content: "";
@@ -51,6 +136,43 @@ body::before {
     radial-gradient(ellipse 80% 50% at 50% -10%, rgba(187, 147, 92, 0.22), transparent),
     radial-gradient(ellipse 60% 45% at 100% 100%, rgba(187, 147, 92, 0.1), transparent),
     radial-gradient(ellipse 50% 40% at 0% 80%, rgba(67, 38, 22, 0.6), transparent);
+}
+
+/* Brightness wave: a brighter copy of the grid, revealed only where a moving
+   mask band passes — so only the lines light up, never the background */
+html::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M0 24 24 0 48 24 24 48Z' fill='none' stroke='%23e8c890' stroke-opacity='0.4'/%3E%3C/svg%3E");
+  -webkit-mask-image: linear-gradient(115deg, transparent 40%, black 50%, transparent 60%);
+  mask-image: linear-gradient(115deg, transparent 40%, black 50%, transparent 60%);
+  -webkit-mask-size: 300% 300%;
+  mask-size: 300% 300%;
+  animation: bg-brightness-wave 16s ease-in-out infinite;
+}
+
+/* Sweep the mask band across the bright grid */
+@keyframes bg-brightness-wave {
+  from {
+    -webkit-mask-position: 150% 0;
+    mask-position: 150% 0;
+  }
+  to {
+    -webkit-mask-position: -50% 0;
+    mask-position: -50% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html::before {
+    animation: none;
+    -webkit-mask-image: none;
+    mask-image: none;
+    visibility: hidden;
+  }
 }
 
 body::after {
