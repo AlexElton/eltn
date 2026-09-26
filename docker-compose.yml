@@ -4,5 +4,5 @@ services:
     image: website:latest
     container_name: website-compose-test
     ports:
-      - "8082:3000"
+      - "127.0.0.1:8080:3000"
     restart: unless-stopped
