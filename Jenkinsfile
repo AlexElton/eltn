@@ -2,23 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Build Docker Image') {
-            steps {
-                sh 'docker build -t website:latest .'
-            }
-        }
-
-        stage('Deploy') {
+        stage('Build & Deploy') {
             steps {
                 sh '''
-                    docker stop website-container || true
-                    docker rm website-container || true
-
-                    docker run -d \
-                        --name website-container \
-                        --restart unless-stopped \
-                        -p 8080:3000 \
-                        website:latest
+                    docker compose down
+                    docker compose up -d --build
                 '''
             }
         }
