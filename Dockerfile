@@ -1,4 +1,4 @@
-# 1. Bruk en offisiell Node.js-avbildning som basee
+# 1. Bruk en offisiell Node.js-avbildning som base
 FROM node:20-alpine
 
 # 2. Opprett en mappe for appen inne i containeren
