@@ -11,7 +11,7 @@ export default function Home() {
     <main className="mx-auto w-full max-w-4xl flex-1 px-6">
       <section className="flex flex-col items-start gap-6 py-24">
         <h1 className="max-w-2xl text-4xl font-semibold leading-tight tracking-tight text-foreground">
-          Hi, I&apos;m eltn. I build things for the web.
+          Wasssuuuup
         </h1>
         <p className="max-w-xl text-lg leading-8 text-foreground/70">
           A short intro goes here — what you do, what you care about, and what makes you interesting
